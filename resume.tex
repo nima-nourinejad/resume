@@ -1,0 +1,124 @@
+\documentclass[a4paper,9pt]{article}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{titlesec}
+\usepackage[normalem]{ulem} % For underlining, with normalem to prevent ulem from changing \emph
+
+% Page margins
+\geometry{margin=0.5in}
+
+% Setting up itemize globally
+\setlist[itemize]{noitemsep, topsep=0pt, leftmargin=*}
+
+% Centering section titles
+\titleformat{\section}[block]{\filcenter\large\bfseries}{\thesection}{1em}{}
+
+% Custom command for underlining main section titles
+\newcommand{\mainsection}[1]{\underline{#1}}
+
+% Setting up hyperref to remove color and border around links
+\hypersetup{
+    colorlinks,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=black,
+    citecolor=black,
+    allcolors=black
+}
+
+\begin{document}
+
+% Name and contact information with location
+\noindent
+\begin{minipage}[t]{0.5\textwidth}
+  \textbf{\huge Nima Nourinejad}
+\end{minipage}%
+\begin{minipage}[t]{0.5\textwidth}
+  \raggedleft
+  \begin{itemize}[label={},leftmargin=*,noitemsep]
+    \item \textbf{Phone}: 045 177 4255
+    \item \textbf{Email}: \href{mailto:nima.nourinejad@gmail.com}{nima.nourinejad@gmail.com}
+    \item \textbf{LinkedIn}: \href{https://linkedin.com/in/nima-nourinejad}{linkedin.com/in/nima-nourinejad}
+    \item \textbf{GitHub}: \href{https://github.com/nima-nourinejad}{github.com/nima-nourinejad}
+  \end{itemize}
+\end{minipage}
+
+% Summary section with underlining
+\section*{\mainsection{Summary}}
+Passionate software developer with a foundation in full-stack JavaScript and C programming. Hands-on experience in web development, system administration, and database management. Currently pursuing an IBM Full-Stack JavaScript Developer Certificate and working on projects at Hive. Advanced English proficiency acquired through completing a master’s degree in the UK and enhanced further by professional experience at LG International, where English was the primary language of communication.
+
+% Education and Certificates section with underlining
+\section*{\mainsection{Education and Certificates}}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Hive}: \textit{Software Development} (Expected 2024)
+  \item \textbf{IBM (via Coursera)}: \textit{Full-Stack JavaScript Developer Certificate} (Expected 2024)
+  \item \textbf{University of East Anglia, UK}: \textit{MSc Marketing} (2013)
+  \item \textbf{Amirkabir University Of Technology, Iran}: \textit{BSc Mechanical Engineering} (2010)
+\end{itemize}
+
+% Skills section with underlining
+\section*{\mainsection{Skills}}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Programming Languages}: JavaScript, Python, C, C++
+  \item \textbf{Technologies}: Node.js, Express.js, MongoDB, React.js, FastAPI, PostgreSQL, SQL Server
+  \item \textbf{Tools}: Git, GitHub, Agile, Scrum, VirtualBox, SELinux, AppArmor
+  \item \textbf{Soft Skills}: Leadership, Project Management, Strategic Planning, Team Collaboration, Problem-Solving
+  \item \textbf{Languages}: English (Advanced), Persian (Native)
+\end{itemize}
+
+% Projects and Achievements section with underlining
+\section*{\mainsection{Projects and Achievements}}
+
+% Subsection for IBM Certificate
+\subsection*{IBM Full-Stack JavaScript Developer Professional Certificate}
+\begin{multicols}{2}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Achieved Certificates}: 
+    \begin{itemize}[leftmargin=*]
+      \item JavaScript Programming Essentials
+      \item Introduction to HTML, CSS, \& JavaScript
+      \item Introduction to Software Engineering
+      \item Getting Started with Git and GitHub
+    \end{itemize}
+  \item \textbf{Upcoming Courses}: Advanced JavaScript, Node.js, Express.js, MongoDB, React.js, API development, and DevOps.
+\end{itemize}
+\end{multicols}
+
+% Subsection for Hive Projects
+\subsection*{Hive Projects}
+\setlength{\columnsep}{20pt} % Adjust the column separation
+\begin{multicols}{2}
+\begin{itemize}[leftmargin=*]
+    \raggedcolumns % Ensure better alignment in the columns
+    \item \textbf{So Long}: Developed a 2D game, learning texture and sprite management.
+    \item \textbf{Pipex}: Implemented a UNIX pipeline mechanism.
+    \item \textbf{Philosophers}: Simulated the dining philosophers problem.
+    \item \textbf{Born2beRoot}: System administration with virtualization and SELinux
+    \item \textbf{Shell Exercises}: Developed efficient shell scripts.
+    \item \textbf{Command Line Tools}: Created custom command-line tools.
+    \item \textbf{Algorithmic Challenges}: Solved complex algorithmic problems.
+  \end{itemize}
+\end{multicols}
+
+% Subsection for Python Intensive Course
+\subsection*{Python Intensive Course at Hive}
+\begin{itemize}[leftmargin=*]
+  \item Completed projects covering basic and advanced Python programming, image processing, data handling, and package development.
+\end{itemize}
+
+% Other Online Courses section
+\subsection*{Other Online Courses}
+\begin{itemize}[leftmargin=*]
+  \item HTML and CSS - SQL Server - PostgreSQL - FastAPI - Python - C Programming
+\end{itemize}
+
+% Experience section with underlining
+\section*{\mainsection{Experience}}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Tavan Technology Tara, Tehran, Iran} \textit{Commercial Expert} (June 2019 - 2 years)
+  \item \textbf{LG International, Tehran, Iran} \textit{Sales Expert} (April 2016 - 2 years)
+\end{itemize}
+
+\end{document}
