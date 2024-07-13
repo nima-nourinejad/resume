@@ -17,15 +17,14 @@ jobs:
     - name: Set up LaTeX
       uses: xu-cheng/latex-action@v2
       with:
-        root_file: resume/resume.tex   # Specify the correct path to the main LaTeX document
+        root_file: resume.tex   # Specify the correct path to the main LaTeX document
 
     - name: Compile LaTeX document
       run: |
-        cd resume   # Change directory to where resume.tex is located
         pdflatex -interaction=nonstopmode resume.tex
 
     - name: Upload PDF artifact
       uses: actions/upload-artifact@v2
       with:
         name: resume
-        path: ./resume/resume.pdf   # Adjust the path to the PDF file accordingly
+        path: ./resume.pdf   # Adjust the path to the PDF file accordingly
