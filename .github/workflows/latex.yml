@@ -14,10 +14,10 @@ jobs:
     - name: Set up Git repository
       uses: actions/checkout@v2   # Checks out your repository so files can be accessed
 
-    - name: Set up LaTeX
-      uses: xu-cheng/latex-action@v2
-      with:
-        root_file: resume.tex   # Specify the correct path to the main LaTeX document
+    - name: Install LaTeX
+      run: |
+        sudo apt-get update
+        sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
 
     - name: Compile LaTeX document
       run: |
