@@ -1,4 +1,4 @@
-name: Update Resume on GitHub Pages
+name: Compile LaTeX to PDF
 
 on:
   push:
@@ -6,28 +6,28 @@ on:
       - main
 
 jobs:
-  update-resume:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
+    - name: Set up Git repository
       uses: actions/checkout@v4
 
-    - name: Setup LaTeX
+    - name: Install LaTeX
       run: |
         sudo apt-get update
         sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
 
-    - name: Compile LaTeX Document
+    - name: Compile LaTeX document
       run: |
         pdflatex -interaction=nonstopmode -halt-on-error resume.tex
       continue-on-error: false
 
-    - name: Verify PDF Generation
+    - name: Verify PDF generation
       run: ls -l resume.pdf
       continue-on-error: true
 
-    - name: Check for PDF Existence
+    - name: Check for PDF existence
       run: test -f resume.pdf && echo "resume.pdf exists" || echo "resume.pdf does not exist"
       continue-on-error: true
 
@@ -39,7 +39,7 @@ jobs:
         git config --global user.email 'nima.nourinejad@gmail.com'
         git fetch origin
         git checkout gh-pages || git checkout --orphan gh-pages
-        git rm -rf .
+        git rm -rf . # Clean the branch in case it wasn't empty
         cp resume.pdf ./resume.pdf
         git add resume.pdf
         git commit -m "Update resume" || echo "No changes to commit"
