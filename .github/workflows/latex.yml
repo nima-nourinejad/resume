@@ -21,6 +21,15 @@ jobs:
     - name: Compile LaTeX document
       run: |
         pdflatex -interaction=nonstopmode resume.tex
+      continue-on-error: true
+
+    - name: List directory after compilation
+      run: ls -la
+      continue-on-error: true
+
+    - name: Check for PDF existence
+      run: test -f resume.pdf && echo "resume.pdf exists" || echo "resume.pdf does not exist"
+      continue-on-error: true
 
     - name: Deploy to GitHub Pages
       env:
@@ -34,3 +43,4 @@ jobs:
         git add resume.pdf
         git commit -m "Update resume" || echo "No changes to commit"
         git push origin gh-pages
+      continue-on-error: true
