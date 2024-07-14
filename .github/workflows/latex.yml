@@ -7,12 +7,11 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - name: Set up Git repository
-      uses: actions/checkout@v2   # Checks out your repository so files can be accessed
+      uses: actions/checkout@v2
 
     - name: Install LaTeX
       run: |
@@ -27,4 +26,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: resume
-        path: ./resume.pdf   # Adjust the path to the PDF file accordingly
+        path: ./resume.pdf
