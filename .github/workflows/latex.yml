@@ -23,8 +23,8 @@ jobs:
         pdflatex -interaction=nonstopmode resume.tex
       continue-on-error: true
 
-    - name: List directory after compilation
-      run: ls -la
+    - name: Verify PDF generation
+      run: ls -l resume.pdf
       continue-on-error: true
 
     - name: Check for PDF existence
