@@ -20,8 +20,8 @@ jobs:
 
     - name: Compile LaTeX document
       run: |
-        pdflatex -interaction=nonstopmode resume.tex
-      continue-on-error: true
+        pdflatex -interaction=nonstopmode -halt-on-error resume.tex
+      continue-on-error: false # Removed to halt on error
 
     - name: Verify PDF generation
       run: ls -l resume.pdf
