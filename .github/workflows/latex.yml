@@ -21,7 +21,7 @@ jobs:
     - name: Compile LaTeX document
       run: |
         pdflatex -interaction=nonstopmode -halt-on-error resume.tex
-      continue-on-error: false # Removed to halt on error
+      continue-on-error: false
 
     - name: Verify PDF generation
       run: ls -l resume.pdf
@@ -39,6 +39,7 @@ jobs:
         git config --global user.email 'nima.nourinejad@gmail.com'
         git fetch origin
         git checkout gh-pages || git checkout --orphan gh-pages
+        git rm -rf . # Clean the branch in case it wasn't empty
         cp resume.pdf ./resume.pdf
         git add resume.pdf
         git commit -m "Update resume" || echo "No changes to commit"
