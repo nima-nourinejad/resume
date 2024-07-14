@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: Set up Git repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Install LaTeX
       run: |
@@ -27,3 +27,4 @@ jobs:
       with:
         name: resume
         path: ./resume.pdf
+        if-no-files-found: error
