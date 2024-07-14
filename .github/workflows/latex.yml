@@ -31,7 +31,7 @@ jobs:
     - name: Deploy to GitHub Pages
       run: |
         git config --global user.name 'Nima Nourinejad'
-        git config --global user.email 'nima.nourinejade@gmail.com'
+        git config --global user.email 'nima.nourinejad@gmail.com'
         git fetch origin
         git checkout gh-pages
         cp resume.pdf ./resume.pdf
